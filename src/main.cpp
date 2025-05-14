@@ -47,7 +47,7 @@ void setup_modulators(fluid_synth_t* synth) {
                          | FLUID_MOD_POSITIVE);
     fluid_mod_set_source2(mod.get(), 0, 0);
     fluid_mod_set_dest(mod.get(), GEN_FILTERQ);
-    fluid_mod_set_amount(mod.get(), FLUID_PEAK_ATTENUATION);
+    fluid_mod_set_amount(mod.get(), 960.0f);
     fluid_synth_add_default_mod(synth, mod.get(), FLUID_SYNTH_ADD);
 
     // Release time modulator
@@ -333,13 +333,6 @@ int main(int argc, char** argv) {
     }
 
     std::cout << "FluidADSR started with SoundFont: " << soundfont_path << std::endl;
-    std::cout << "MIDI controllers for ADSR and filter:" << std::endl;
-    std::cout << " CC 71: Filter resonance" << std::endl;
-    std::cout << " CC 72: Release time" << std::endl;
-    std::cout << " CC 73: Attack time" << std::endl;
-    std::cout << " CC 74: Filter cutoff" << std::endl;
-    std::cout << " CC 75: Decay time" << std::endl;
-    std::cout << " CC 79: Sustain" << std::endl;
     std::cout << "Press Ctrl+C to quit" << std::endl;
 
     // Main loop
