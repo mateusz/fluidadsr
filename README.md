@@ -1,6 +1,10 @@
 # FluidADSR
 
-A simple command-line utility that provides ADSR envelope and filter control for FluidSynth using MIDI controllers.
+A simple command-line utility that wraps fluidsynth with MIDI-controlled ADSR envelope and filter control. Fluidsynth does not provide this capability on purpose due to lack of support in the soundfonts, instead requiring users to implement their own control using SDK.
+
+This is largely based on juicysfplugin, with just the essential stuff extracted. There is no UI.
+
+This was made with AI support and I'm currently using it as part of my Pi-based piano synth box.
 
 ## Features
 
@@ -26,17 +30,24 @@ A simple command-line utility that provides ADSR envelope and filter control for
 ## Linux Installation
 
 ### Ubuntu/Debian
+
 ```bash
 sudo apt update
 sudo apt install build-essential cmake pkg-config libfluidsynth-dev libasound2-dev
 ```
 
 ### Fedora
+
+I haven't tried, but the AI says:
+
 ```bash
 sudo dnf install gcc-c++ cmake pkgconfig fluidsynth-devel alsa-lib-devel
 ```
 
 ### Arch Linux
+
+I haven't tried, but the AI says:
+
 ```bash
 sudo pacman -S base-devel cmake pkg-config fluidsynth alsa-lib
 ```
